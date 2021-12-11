@@ -1,13 +1,31 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
-    <title>签到链接测试</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
-
 <body>
-    跳转文本测试
-    <a href="weixin://dl/business/?t=JigGe1Cbj1k">点击跳转</a>
-</body>
+<button>点击跳转</button>
+<div></div>
+<script>
+    var btn = document.querySelector('button');
+    btn.addEventListener('click', function () {   // 注册按钮点击事件
+        location.href = "weixin://dl/business/?t=JigGe1Cbj1k";  //  要跳转到的地址
+    });
+    var div = document.querySelector('div');
+    var time = 5;   // 这里设置自动跳转的时间
 
+    function f() {
+        if (time > 0) {
+            div.innerHTML = time + "s后跳转页面";
+            time--;
+        } else {
+            location.href = 'weixin://dl/business/?t=JigGe1Cbj1k';  // 要跳转到的地址
+        }
+    }
+
+    setInterval(f, 1000);  // 计时器
+
+</script>
+</body>
 </html>
