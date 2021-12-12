@@ -1,1 +1,1 @@
-# nnz.cuetalu.githun.io
+# cuetalu.github.io
